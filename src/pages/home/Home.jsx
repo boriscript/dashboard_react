@@ -4,6 +4,7 @@ import Featured from "../../components/featured/Featured";
 import Navbar from "../../components/navbar/Navbar";
 import Widget from "../../components/widget/Widget";
 import Sidebar from "../../components/sidebar/Sidebar";
+import Table from "../../components/table/Table";
 import "./home.scss";
 
 const Home = () => {
@@ -21,6 +22,10 @@ const Home = () => {
         <div className="charts">
           <Featured />
           <Chart />
+        </div>
+        <div className="listContainer">
+          <div className="listTitle">Latest Transactions</div>
+          <Table />
         </div>
       </div>
     </div>
