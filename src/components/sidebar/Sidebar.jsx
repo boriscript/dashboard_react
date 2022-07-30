@@ -11,34 +11,45 @@ import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import SettingsApplicationsOutlinedIcon from "@mui/icons-material/SettingsApplicationsOutlined";
 import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">Some logo</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">Some logo</span>
+        </Link>
       </div>
       <hr />
       <div className="center">
         <ul>
           <p className="title">Vamo River, vieja</p>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li>
+              <DashboardIcon className="icon" />
+              <span>Dashboard</span>
+            </li>
+          </Link>
           <p className="title">Lists</p>
-          <li>
-            <AccountCircleRoundedIcon className="icon" />
-            <span>Users</span>
-          </li>
-          <li>
-            <CategoryOutlinedIcon className="icon" />
-            <span>Products</span>
-          </li>
-          <li>
-            <InventoryOutlinedIcon className="icon" />
-            <span>Orders</span>
-          </li>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <AccountCircleRoundedIcon className="icon" />
+              <span>Users</span>
+            </li>
+          </Link>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <li>
+              <CategoryOutlinedIcon className="icon" />
+              <span>Products</span>
+            </li>
+          </Link>
+          <Link to="/orders" style={{ textDecoration: "none" }}>
+            <li>
+              <InventoryOutlinedIcon className="icon" />
+              <span>Orders</span>
+            </li>
+          </Link>
           <li>
             <LocalShippingOutlinedIcon className="icon" />
             <span>Delivery</span>

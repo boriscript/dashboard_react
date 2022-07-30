@@ -3,19 +3,19 @@ export const userInputs = [
     id: 1,
     label: "Username",
     type: "text",
-    placeholder: "juan_doe",
+    placeholder: "juana_doe",
   },
   {
     id: 2,
     label: "Name Surname",
     type: "text",
-    placeholder: "Juan Doe",
+    placeholder: "Juana Doe",
   },
   {
     id: 3,
     label: "Email",
     type: "text",
-    placeholder: "juan_doe@gmail.com",
+    placeholder: "juana_doe@gmail.com",
   },
   {
     id: 4,
