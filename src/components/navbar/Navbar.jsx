@@ -1,14 +1,17 @@
-import "./navbar.scss";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
-import NightlightOutlinedIcon from "@mui/icons-material/NightlightOutlined";
-import CropFreeOutlinedIcon from "@mui/icons-material/CropFreeOutlined";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+import CropFreeOutlinedIcon from "@mui/icons-material/CropFreeOutlined";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
-/* import NightlightRoundOutlinedIcon from "@mui/icons-material/NightlightRoundOutlined"; */
+import NightlightOutlinedIcon from "@mui/icons-material/NightlightOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { useContext } from "react";
+import { DarkContext } from "../../context/darkContext";
+import "./navbar.scss";
+// import NightlightRoundOutlinedIcon from "@mui/icons-material/NightlightRoundOutlined";
 
 const Navbar = () => {
+  const { dispatch } = useContext(DarkContext);
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -22,7 +25,10 @@ const Navbar = () => {
             English
           </div>
           <div className="item">
-            <NightlightOutlinedIcon className="icon" />
+            <NightlightOutlinedIcon
+              className="icon"
+              onClick={() => dispatch({ type: "TOGGLE" })}
+            />
           </div>
           <div className="item">
             <CropFreeOutlinedIcon className="icon" />

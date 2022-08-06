@@ -1,14 +1,19 @@
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import List from "./pages/list/List";
-import Single from "./pages/single/Single";
-import New from "./pages/new/New";
+import { useContext } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { DarkContext } from "./context/darkContext";
 import { productInputs, userInputs } from "./formSource";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import List from "./pages/list/List";
+import Login from "./pages/login/Login";
+import New from "./pages/new/New";
+import Single from "./pages/single/Single";
+import "./style/dark.scss";
 
 function App() {
+  const { darkMode } = useContext(DarkContext);
+
   return (
-    <div className="App">
+    <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
         <Routes>
           <Route path="/">

@@ -1,19 +1,22 @@
-import "./sidebar.scss";
-import DashboardIcon from "@mui/icons-material/Dashboard";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
+import CircleNotificationsOutlinedIcon from "@mui/icons-material/CircleNotificationsOutlined";
+import DashboardIcon from "@mui/icons-material/Dashboard";
 import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
-import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
-import CircleNotificationsOutlinedIcon from "@mui/icons-material/CircleNotificationsOutlined";
-import SystemSecurityUpdateGoodOutlinedIcon from "@mui/icons-material/SystemSecurityUpdateGoodOutlined";
-import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
-import SettingsApplicationsOutlinedIcon from "@mui/icons-material/SettingsApplicationsOutlined";
-import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
+import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
+import QueryStatsOutlinedIcon from "@mui/icons-material/QueryStatsOutlined";
+import SettingsApplicationsOutlinedIcon from "@mui/icons-material/SettingsApplicationsOutlined";
+import SystemSecurityUpdateGoodOutlinedIcon from "@mui/icons-material/SystemSecurityUpdateGoodOutlined";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { DarkContext } from "../../context/darkContext";
+import "./sidebar.scss";
 
 const Sidebar = () => {
+  const { dispatch } = useContext(DarkContext);
   return (
     <div className="sidebar">
       <div className="top">
@@ -88,8 +91,14 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className="bottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div
+          className="colorOption"
+          onClick={() => dispatch({ type: "LIGHT" })}
+        ></div>
+        <div
+          className="colorOption"
+          onClick={() => dispatch({ type: "DARK" })}
+        ></div>
       </div>
     </div>
   );

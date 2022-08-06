@@ -1,12 +1,12 @@
-import "./chart.scss";
 import {
-  AreaChart,
   Area,
-  XAxis,
+  AreaChart,
   CartesianGrid,
-  Tooltip,
   ResponsiveContainer,
+  Tooltip,
+  XAxis
 } from "recharts";
+import "./chart.scss";
 
 const data = [
   { name: "January", Total: 1200 },
